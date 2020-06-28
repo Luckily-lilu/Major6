@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="click"
+            type="com.ll.usercenter.view.MainLoginActivity" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/toolbar" android:id="@+id/mainlogin_toolbar"/>
+
+        <ImageView
+            android:paddingTop="50dp"
+            android:id="@+id/img_mainlogin_userpic"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="240dp"
+            android:layout_height="280dp" />
+        <TextView
+            android:onClick="@{click::onClickReg}"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:layout_gravity="center_horizontal"
+            android:text="注册新用户"
+            android:textColor="#4CAF50"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="@{click::onClickPwdLogin}"
+            android:layout_gravity="center_horizontal"
+            android:text="密码登录"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:background="@color/main_color"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:paddingTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:text="第三方登录"
+            android:textColor="#8B8D8B"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:onClick="@{click::onClickQQ}"
+                android:drawableTop="@mipmap/qq"
+                android:text="QQ登录"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:onClick="@{click::onClickWX}"
+                android:drawableTop="@mipmap/weixin"
+                android:text="微信登录"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:onClick="@{click::onClickWB}"
+                android:drawableTop="@mipmap/xinlang"
+                android:text="新浪登录"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

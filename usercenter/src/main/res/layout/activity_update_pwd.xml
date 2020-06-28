@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+       <variable
+           name="vm"
+           type="com.ll.usercenter.viewmodel.UserViewModel" />
+        <variable
+            name="click"
+            type="com.ll.usercenter.view.UpdatePwdActivity" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/toolbar" android:id="@+id/updatepwd_toolbar"/>
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:text="@={vm.userEntity.username}"
+                android:layout_marginRight="10dp"
+                android:layout_weight="2"
+                android:hint="输入电话号码"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <Button
+                android:onClick="@{click::getYZM}"
+                android:text="发送验证码"
+                android:textColor="#2196F3"
+                android:background="@drawable/btn_blue_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <EditText
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:hint="验证码"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:text="@={vm.userEntity.pwd}"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:hint="输入新密码"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/et_update_repwd"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:hint="再次输入新密码"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:onClick="@{click::update}"
+            android:text="确定修改"
+            android:textColor="#FFF"
+            android:background="#4CAF50"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>
